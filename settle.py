@@ -17,5 +17,5 @@ with open("players.json") as json_file:
                 amount = round(min(abs(players[i]["earnings"]), players[j]["earnings"]), 2)
                 players[i]["earnings"] += amount
                 players[j]["earnings"] -= amount
-                print("{} sends {} ${}".format(players[i]["name"], players[j]["name"], amount))
+                print("{} sends {} ${:,.2f}".format(players[i]["name"], players[j]["name"], amount))
             j += 1
