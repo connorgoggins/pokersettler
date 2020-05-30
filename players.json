@@ -1,0 +1,16 @@
+{
+  "players": [
+    {
+      "name": "First Player",
+      "earnings": 25.00
+    },
+    {
+      "name": "Second Player",
+      "earnings": -10.00
+    },
+    {
+      "name": "Third Player",
+      "earnings": -15.00
+    }
+  ]
+}
