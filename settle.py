@@ -7,14 +7,14 @@ with open("players.json") as json_file:
     for i in range(len(players)):
         net += players[i]["earnings"]
 
-    if net != 0.0:
+    if round(net, 2) != 0.0:
         raise Exception('Imbalance detected. Total gains do not equal total losses.')
 
     for i in range(len(players)):
         j = 0
-        while players[i]["earnings"] < 0.0:
+        while round(players[i]["earnings"], 2) < 0.0:
             if j != i and players[j]["earnings"] > 0.0:
-                amount = min(abs(players[i]["earnings"]), players[j]["earnings"])
+                amount = round(min(abs(players[i]["earnings"]), players[j]["earnings"]), 2)
                 players[i]["earnings"] += amount
                 players[j]["earnings"] -= amount
                 print("{} sends {} ${}".format(players[i]["name"], players[j]["name"], amount))
